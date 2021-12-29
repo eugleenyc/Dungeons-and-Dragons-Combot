@@ -1,8 +1,12 @@
-const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-const devMode = process.env.NODE_ENV !== "production";
+import {dirname } from 'path';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-module.exports = {
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default {
   entry: './client/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -16,31 +20,31 @@ module.exports = {
         test: /\.jsx?/,
         exclude: /(node_modules)/,
         use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
-            }
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
+        }
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
           // // Creates `style` nodes from JS strings
-          "style-loader",
+          'style-loader',
           // // Translates CSS into CommonJS
-          "css-loader",
+          'css-loader',
           // Compiles Sass to CSS
-          "sass-loader",
+          'sass-loader',
         ],
       },
 
     ]
   },
-//   plugins: [
-//     new HtmlWebpackPlugin({
-//       template: './index.html'
-//     })
-//   ],
+  //   plugins: [
+  //     new HtmlWebpackPlugin({
+  //       template: './index.html'
+  //     })
+  //   ],
   devServer: {
     proxy: {
       '/': 'http://localhost:3000',

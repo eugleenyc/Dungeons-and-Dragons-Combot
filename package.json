@@ -6,17 +6,28 @@
   "scripts": {
     "start": "NODE_ENV=production node server/server.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "concurrently \"NODE_ENV=development webpack serve --open\" \"node server/server.js\""
-
+    "dev": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && concurrently \"NODE_ENV=development webpack serve --open\" \"nodemon server/server.js\"",
+    "testDialogFlow": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && node dialogFlow.js solo-project-336520",
+    "testgcloud": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && gcloud auth application-default print-access-token && node \"./test scripts/gapi.js\""
   },
+  "type": "module",
   "dependencies": {
+    "@google-cloud/dialogflow": "^4.6.0",
+    "@google-cloud/storage": "^5.16.1",
+    "cross-fetch": "^3.1.4",
     "css-loader": "^6.5.1",
     "express": "^4.17.2",
+    "fs": "^0.0.1-security",
     "mongoose": "^6.1.4",
     "nodejs": "^0.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "style-loader": "^3.3.1"
+    "react-hot-loader": "^4.13.0",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
+    "style-loader": "^3.3.1",
+    "url": "^0.11.0",
+    "uud": "^0.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
@@ -25,6 +36,7 @@
     "babel-loader": "^8.2.3",
     "concurrently": "^6.5.1",
     "eslint": "^8.5.0",
+    "eslint-plugin-react": "^7.28.0",
     "nodemon": "^2.0.15",
     "sass": "^1.45.1",
     "sass-loader": "^12.4.0",

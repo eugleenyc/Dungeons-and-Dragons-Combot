@@ -1,0 +1,20 @@
+[
+  {
+    "value": "CR rating",
+    "synonyms": [
+      "CR rating",
+      "creature rating",
+      "CR",
+      "challenge rating",
+      "difficulty",
+      "level"
+    ]
+  },
+  {
+    "value": "type",
+    "synonyms": [
+      "type",
+      "kind"
+    ]
+  }
+]

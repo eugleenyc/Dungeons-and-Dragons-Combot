@@ -1,0 +1,59 @@
+[
+  {
+    "id": "be6eee62-cf80-443a-9110-6cab62ed2dd7",
+    "data": [
+      {
+        "text": "Spanish",
+        "meta": "@sys.language",
+        "alias": "language",
+        "userDefined": true
+      },
+      {
+        "text": " is my main language",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "7c5c72c1-f24f-4b16-9deb-1cadec3b24f3",
+    "data": [
+      {
+        "text": "I speak ",
+        "userDefined": false
+      },
+      {
+        "text": "Taiwanese",
+        "meta": "@sys.language",
+        "alias": "language",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "d9a4a93c-0cd7-4782-b80f-3d5fcba4e816",
+    "data": [
+      {
+        "text": "I know ",
+        "userDefined": false
+      },
+      {
+        "text": "English",
+        "meta": "@sys.language",
+        "alias": "language",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

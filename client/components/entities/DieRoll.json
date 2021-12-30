@@ -1,0 +1,9 @@
+{
+  "id": "2669c4b7-5806-406a-8abf-204133838ad9",
+  "name": "DieRoll",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

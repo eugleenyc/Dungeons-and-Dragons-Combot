@@ -1,9 +1,0 @@
-{
-  "id": "10f6a56b-74f6-4b3b-8cd7-e3171817fde9",
-  "name": "SearchTerm",
-  "isOverridable": true,
-  "isEnum": false,
-  "isRegexp": false,
-  "automatedExpansion": true,
-  "allowFuzzyExtraction": false
-}

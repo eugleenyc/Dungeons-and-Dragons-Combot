@@ -1,9 +1,0 @@
-{
-  "id": "b6c3f95c-97de-427c-92f6-43835cd07ece",
-  "name": "MonsterType",
-  "isOverridable": true,
-  "isEnum": false,
-  "isRegexp": false,
-  "automatedExpansion": false,
-  "allowFuzzyExtraction": false
-}

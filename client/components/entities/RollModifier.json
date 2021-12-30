@@ -1,9 +1,0 @@
-{
-  "id": "7e91bf03-1190-47e0-aae5-1a3137eaea50",
-  "name": "RollModifier",
-  "isOverridable": true,
-  "isEnum": false,
-  "isRegexp": false,
-  "automatedExpansion": true,
-  "allowFuzzyExtraction": false
-}

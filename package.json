@@ -6,9 +6,12 @@
   "scripts": {
     "start": "NODE_ENV=production node server/server.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && concurrently \"NODE_ENV=development webpack serve --open\" \"nodemon server/server.js\"",
-    "testDialogFlow": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && node dialogFlow.js solo-project-336520",
-    "testgcloud": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && gcloud auth application-default print-access-token && node \"./test scripts/gapi.js\""
+    "dev_mac": "export GOOGLE_APPLICATION_CREDENTIALS=\"/Users/eugene/Codesmith/solo-project-336520-b0df698d8056.json\" && concurrently \"NODE_ENV=development webpack serve --open\" \"nodemon server/server.js\"",
+    "testDialogFlow_mac": "export GOOGLE_APPLICATION_CREDENTIALS=\"/Users/eugene/Codesmith/solo-project-336520-b0df698d8056.json\" && node \"./test scripts/dialogFlow.js\" solo-project-336520",
+    "testgcloud_mac": "export GOOGLE_APPLICATION_CREDENTIALS=\"/Users/eugene/Codesmith/solo-project-336520-b0df698d8056.json\" && gcloud auth application-default print-access-token && node \"./test scripts/gapi.js\"",
+    "dev_pc": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && concurrently \"NODE_ENV=development webpack serve --open\" \"nodemon server/server.js\"",
+    "testDialogFlow_pc": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && node \"./test scripts/dialogFlow.js\" solo-project-336520",
+    "testgcloud_pc": "export GOOGLE_APPLICATION_CREDENTIALS=\"/home/eugene/codesmith/solo-project-336520-b0df698d8056.json\" && gcloud auth application-default print-access-token && node \"./test scripts/gapi.js\""
   },
   "type": "module",
   "dependencies": {
@@ -18,6 +21,7 @@
     "css-loader": "^6.5.1",
     "express": "^4.17.2",
     "fs": "^0.0.1-security",
+    "html-webpack-plugin": "^5.5.0",
     "mongoose": "^6.1.4",
     "nodejs": "^0.0.0",
     "react": "^17.0.2",

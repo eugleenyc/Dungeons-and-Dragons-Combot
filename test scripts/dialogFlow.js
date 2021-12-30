@@ -16,8 +16,8 @@
 
 // [START dialogflow_quickstart]
 
-const dialogflow = require('@google-cloud/dialogflow');
-const uuid = require('uuid');
+import dialogflow from '@google-cloud/dialogflow';
+import { v4 as uuidv4 } from 'uuid';
 
 
 /**
@@ -28,7 +28,7 @@ async function dialogFlow(userDialog) {
   //include the project ID
   const projectId = 'solo-project-336520';
   // A unique identifier for the given session
-  const sessionId = uuid.v4();
+  const sessionId = uuidv4();
 
   // Create a new session
   const sessionClient = new dialogflow.SessionsClient();
@@ -40,6 +40,9 @@ async function dialogFlow(userDialog) {
   // The text query request.
   const request = {
     session: sessionPath,
+    queryParams:{
+      contexts:[{'name': 'projects/solo-project-336520/locations/global/agent/sessions/89625f34-c93b-6a90-c78c-dde80b588449/contexts/challengeratingintent-followup','lifespanCount': 5}]
+    },
     queryInput: {
       text: {
         // The query to send to the dialogflow agent
@@ -55,12 +58,12 @@ async function dialogFlow(userDialog) {
   console.log('Detected intent');
   const result = responses[0].queryResult;
   console.log(`  Query: ${result.queryText}`);
-  console.log(`  Response Text: ${result.fulfillmentText}`);
+  console.log('  Response Text: ',result);
   
 
   if (result.intent) {
     console.log(`  Intent: ${result.intent.displayName}`);
-    return 
+    return;
   } else {
     console.log('  No intent matched.');
   }
@@ -79,4 +82,4 @@ if (args.length !== 1) {
   process.exit(1);
 }
 
-dialogFlow('find me level 5').catch(console.error);
+dialogFlow('get number 5').catch(console.error);

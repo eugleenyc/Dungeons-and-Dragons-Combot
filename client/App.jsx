@@ -3,25 +3,45 @@ import fetch from 'cross-fetch';
 
 const App = () => {
 
+  //sets up state for list
   const[monster, setMonster] = useState();
 
+  //sets up event listener for keypress
   useEffect(() => {
-    const api_URL = 'https://api.open5e.com/monsters/';
+    window.addEventListener('keydown', downHandler);
+    return() => {
+      window.removeEventListener('keydown', downHandler);
+    };
+  });
 
-    fetch(api_URL)
+  //if enter is pressed, send query
+  const downHandler = ({key}) => {
+    if (key === 'Enter') sendQuery();
+  };
+
+  //if button is pressed, send query
+  const buttonClicked = (e) => {
+    sendQuery();
+  };
+
+  const sendQuery = () => {
+    const queryString = document.getElementById('query').value;
+    document.getElementById('query').value = '';
+    console.log(queryString);
+    fetch('/api', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({'query': queryString})
+    })
       .then(response => response.json())
-      .then(response => {
-        setMonster(response);
-        console.log(response);
-      })
-      .catch((error) => console.log(error));
-  }
-    
-    
-  );
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
+
+  };
+
   return (
     <div>
-      {monster}
+      <input type="text" id="query" size={100}></input><input type="button" id="submit" value="CHAT" onClick = {(e) => buttonClicked(e)}></input>
     </div>
   );
 };

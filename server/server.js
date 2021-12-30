@@ -23,8 +23,18 @@ app.use(express.static(path.resolve(__dirname, '../client')));
 
 //start writing route handlers here
 app.use('/api', dialogFlowController.sendQuery, dnd5eapiController.getList, (req, res) => {
-  console.log(req.body);
-  res.status(200).send(`got a GET for ${req.query}`);
+  //spreads and stores all queryobjs in app.locals.queryObjs again
+  app.locals.queryObjs = res.locals.dnd5eapiQuery;
+
+  //stores the monster list so it can be used to parse out waht you want.
+  if (!res.locals.validQuery && !res.locals.specificQuery) {
+    console.log('No valid query...\n\n');
+    res.status(200).json(res.locals.fulfillmentText);
+  }
+  app.locals.monsterList = res.locals.monsterList;
+  app.locals.validQuery = res.locals.validQuery;
+  console.log('\n\nfinished and returning response...\n\n');
+  res.status(200).json(res.locals.monsterList);
 });
 
 app.use('/', (req, res) => {

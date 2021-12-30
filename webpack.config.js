@@ -1,8 +1,9 @@
 import {dirname } from 'path';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const devMode = process.env.NODE_ENV !== 'production';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -40,11 +41,11 @@ export default {
 
     ]
   },
-  //   plugins: [
-  //     new HtmlWebpackPlugin({
-  //       template: './index.html'
-  //     })
-  //   ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './client/index.html'
+    })
+  ],
   devServer: {
     proxy: {
       '/': 'http://localhost:3000',

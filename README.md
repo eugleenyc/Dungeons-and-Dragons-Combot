@@ -29,4 +29,22 @@
 -wrote controller to get from dnd5eapi
 -fetch wouldn't work since it doesn't like require. Used import and broke everything. Had to fix all the breaking points.
 -feeling demoralized.
--FULL LOOP COMPLETE! Request from postman sends to dialogFlow which is parsed and sends fetch to dnd5eapi 
+-BACKEND LOOP COMPLETE! Request from postman sends to dialogFlow which is parsed and sends fetch to dnd5eapi 
+
+12/28/21
+-FRONT END LOOP COMPLETE! Set up input box which can send query and receive data
+-Production mode is broken... when???
+-mulling over what I should do.
+-Wrote scraper and simple script to build entries for type and name
+-Wrote pulling AC and Type as well
+-Write specifically pulling by name
+-Write stacking query parameters
+-spent time trying to learn context on the GUI
+-can't understand why context doesn't follow on backend
+-Need contexts in query apparently
+-read a ton on the documentation, but can't get it to work
+-I hate documentation.
+-found out the GUI has the api code when you FUCKING SCROLL DOWN!!!
+-Turns out I need to SLOW DOWN when reading the documentation.
+-context name was completely wrong. Copied from GUI, works.
+-BACK END IS DONE!!!! COMPLETELY DONE!!!!

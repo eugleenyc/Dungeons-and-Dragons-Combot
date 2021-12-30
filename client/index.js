@@ -4,8 +4,8 @@ import App from './App.jsx';
 import './styles.css';
 
 render(
-      <App />,
-    document.getElementById('app'),
-  );
+  <App />,
+  document.getElementById('app'),
+);
 
   

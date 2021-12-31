@@ -64,6 +64,7 @@ dialogFlowController.sendQuery = async (req, res, next) => {
   res.locals.validQuery = false;
   //creates a specific boolean in res.
   res.locals.specificQuery = false;
+  res.locals.fulfillmentText = result.fulfillmentText;
   switch(result.intent.displayName) {
   case 'Challenge Rating Intent': {
     console.log(`  Intent: ${result.intent.displayName}`);
@@ -133,7 +134,6 @@ dialogFlowController.sendQuery = async (req, res, next) => {
     res.locals.validQuery = false;
     res.locals.specificQuery = false;
     res.locals.dnd5eapiQuery = [];
-    res.locals.fulfillmentText = result.fulfillmentText;
     next();
     break;
   }
@@ -141,7 +141,6 @@ dialogFlowController.sendQuery = async (req, res, next) => {
   default: {
     if (result.intent) console.log(`  Intent: ${result.intent.displayName}`);
     else console.log('  No intent matched.');
-    res.locals.fulfillmentText = result.fulfillmentText;  
     next();
   }
   }

@@ -18,7 +18,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.jsx?$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
@@ -55,5 +55,8 @@ export default {
     },
     compress: true,
     port: 8080,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };

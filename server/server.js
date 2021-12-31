@@ -29,12 +29,12 @@ app.use('/api', dialogFlowController.sendQuery, dnd5eapiController.getList, (req
   //stores the monster list so it can be used to parse out waht you want.
   if (!res.locals.validQuery && !res.locals.specificQuery) {
     console.log('No valid query...\n\n');
-    res.status(200).json(res.locals.fulfillmentText);
+    res.status(200).json({'reply': res.locals.fulfillmentText});
   }
   app.locals.monsterList = res.locals.monsterList;
   app.locals.validQuery = res.locals.validQuery;
   console.log('\n\nfinished and returning response...\n\n');
-  res.status(200).json(res.locals.monsterList);
+  res.status(200).json({'reply': res.locals.fulfillmentText, 'count': res.locals.monsterList.count, 'list':res.locals.monsterList.results});
 });
 
 app.use('/', (req, res) => {

@@ -1,4 +1,5 @@
 {
+  "browser": true,
   "root": true,
   "ignorePatterns": ["**/util"],
   "env": {

@@ -10,7 +10,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default {
   entry: './client/index.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'client/build'),
     publicPath: '/build',
     filename: 'bundle.js',
   },

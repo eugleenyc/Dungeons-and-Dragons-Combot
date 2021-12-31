@@ -31,7 +31,7 @@
 - feeling demoralized.
 - BACKEND LOOP COMPLETE! Request from postman sends to dialogFlow which is parsed and sends fetch to dnd5eapi 
 
-12/28/21
+12/29/21
 - FRONT END LOOP COMPLETE! Set up input box which can send query and receive data
 - Production mode is broken... when???
 - mulling over what I should do.
@@ -49,7 +49,7 @@
 - context name was completely wrong. Copied from GUI, works.
 - BACK END IS DONE!!!! COMPLETELY DONE!!!!
 
-12/29/21
+12/30/21
 - Let's do some front end
 - built out react with hooks with redux templates from previous units
 - Wouldn't render properly.
@@ -62,3 +62,6 @@
 - All stored in state now
 - Working on monsterContainer in order to show proper. Have logic finished.
 - Will show everything unstyled except for single creature.
+
+12/31/21
+- fixed the production mode
